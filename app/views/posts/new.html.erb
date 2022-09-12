@@ -1,7 +1,7 @@
 <div class="w-100 d-flex flex-column align-items-center">
   <h2 class="my-4 display-12"><%= "New post" %></h2>
 
-  <div class="col-md-2 col-12">
+  <div class="col-md-4 col-12">
     <%= render 'form', post: @post %>
     <%= link_to "Back", :back, class: 'btn btn-outline-primary ms-1 mt-2', data: { turbo: false }%>
   </div>
