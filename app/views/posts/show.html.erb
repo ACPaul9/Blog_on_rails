@@ -1,12 +1,11 @@
 <div class="w-100 d-flex flex-column align-items-center">
-  <div>
     <%= render @post %>
     <% if current_user_can_edit?(@post) %>
-      <div class="buffer-both">
-        <%= link_to "Edit this post", edit_post_path(@post), class: 'btn btn-outline-success' %>
-      </div>
+      <div class="col-md-2 mb-2 col-12">
+        <div class="buffer-both">
+          <%= link_to "Edit this post", edit_post_path(@post), class: "btn btn-outline-success" %>
+          <%= link_to "Back", posts_path, class: "btn btn-outline-secondary", data: { turbo: false }%>
+        </div>
     <% end %>
-
-    <%= link_to "Back", posts_path, class: 'btn btn-outline-info', data: { turbo: false }%>
   </div>
 </div>

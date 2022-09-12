@@ -7,20 +7,16 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
-  # GET /posts/1 or /posts/1.json
   def show
   end
 
-  # GET /posts/new
   def new
     @post = current_user.posts.build
   end
 
-  # GET /posts/1/edit
   def edit
   end
 
-  # POST /posts or /posts.json
   def create
     @post = current_user.posts.build(post_params)
     @post.user_id = current_user.id
@@ -36,7 +32,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /posts/1 or /posts/1.json
   def update
     respond_to do |format|
       if @post.update(post_params)
@@ -49,7 +44,6 @@ class PostsController < ApplicationController
     end
   end
 
-  # DELETE /posts/1 or /posts/1.json
   def destroy
     @post.destroy
 
@@ -60,17 +54,16 @@ class PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_post
-      @post = Post.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def post_params
-      params.require(:post).permit(:title, :body)
-    end
+  def set_post
+    @post = Post.find(params[:id])
+  end
 
-    def set_current_user_event
-      @post = current_user.posts.find(params[:id])
-    end
+  def post_params
+    params.require(:post).permit(:title, :body)
+  end
+
+  def set_current_user_event
+    @post = current_user.posts.find(params[:id])
+  end
 end
