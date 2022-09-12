@@ -1,0 +1,7 @@
+<div class="w-100 d-flex flex-column align-items-center">
+  <div>
+    <%= render @post %>
+    <%= link_to "Edit this post", edit_post_path(@post), class: 'btn btn-outline-success' %> |
+    <%= link_to "Back", posts_path, class: 'btn btn-outline-info', data: { turbo: false }%>
+  </div>
+</div>

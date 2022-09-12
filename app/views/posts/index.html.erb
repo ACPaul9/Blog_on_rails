@@ -1,0 +1,8 @@
+<div class="w-100 d-flex flex-column align-items-center">
+  <h1>Posts</h1>
+
+    <%= link_to "Create", new_post_path, class: 'btn btn-success' %>
+    <div class="p-4 p-md-6 mb-4 mt-3 text-white bg-dark rounded">
+        <%= render partial: 'posts/post', collection: @posts %>
+    </div>
+</div>

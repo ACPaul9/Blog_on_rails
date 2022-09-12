@@ -1,0 +1,14 @@
+/*
+ *= require_tree .
+ *= require_self
+ *= require posts
+ */
+
+body {
+    background-color: #cbcbfa;
+}
+
+textarea {
+    width: 800px;
+    height: 350px;
+}

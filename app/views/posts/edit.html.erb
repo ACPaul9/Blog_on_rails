@@ -1,0 +1,10 @@
+<div class="w-100 d-flex flex-column align-items-center">
+  <h2 class="my-4 display-12"><%= "Editing post" %></h2>
+
+  <div class="col-md-4 col-12">
+    <%= render 'form', post: @post %>
+    <%= button_to "Destroy this post", @post, method: :delete,
+                  form: { data: { turbo_confirm: "Are you sure?" } }, class: 'btn btn-danger' %>
+    <%= link_to "Back", :back, class: 'btn btn-outline-primary ms-1 mt-2', data: { turbo: false }%>
+  </div>
+</div>
