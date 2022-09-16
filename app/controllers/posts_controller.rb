@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: [:show]
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_current_user_event, only: [:edit, :update, :destroy]
+  before_action :set_current_user_post, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.all
@@ -63,7 +63,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body)
   end
 
-  def set_current_user_event
+  def set_current_user_post
     @post = current_user.posts.find(params[:id])
   end
 end
